@@ -1,2 +1,5 @@
-# assignment_viking_spa
-high-speed angularingg
+# Viking Spa Assignment
+
+# Information
+
+Solution by [Trevor Elwell](http://trevorelwell.me)
