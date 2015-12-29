@@ -1,0 +1,27 @@
+<!-- Add the Category Filter Dropdown -->
+<section id="filter-category" class="col-sm-3 pull-right">
+	Cart: {{ cart }}
+	<select name="filterCategory" class="form-control" ng-model="filterCategory">
+		<option value="" selected>Select a Category</option>
+		<option value="{{ category }}" ng-repeat="category in categories">
+			{{ category }}
+		</option>
+	</select>
+</section>
+
+<section id="products" class="col-sm-12">
+	<section class="product-wrapper col-sm-4" ng-repeat="product in products | filter: filterCategory">
+		<div class="product-header col-sm-12">
+			<h2><a ui-sref="show( { id: {{ $index }} } )">{{ product.name }}</a></h2>
+		</div>
+		<div class="product-image">
+			<img src="{{ product.image }}">
+			<div class="product-price">
+				{{ product.price | currency }}
+			</div>
+		</div>
+		<div class="product-footer col-sm-12">
+			<p><a class="btn btn-info" ng-click="addToCart($index)">Add to Cart</a></p>
+		</div>
+	</section>
+</section>

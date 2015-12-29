@@ -1,0 +1,9 @@
+<div class="col-sm-10 col-sm-offset-1">
+	<a ui-sref="products" clalss="pull-left">>> All products</a>	
+</div>
+
+<section id="single-product-wrapper" class="col-sm-10 col-sm-offset-1">
+	<h2>{{ product.name }} - {{ product.price | currency }}</h2>	
+	<p><img src="{{ product.image }}">{{ product.description }}</p>
+	<p><a class="btn btn-info" ng-click="addToCart($stateParams.id)">Add to Cart</a>
+</section>

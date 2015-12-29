@@ -3,12 +3,46 @@
 		<title>Viking Spa Store | AngularJS</title>
 		<!-- Include Bootstrap CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+
 		<!-- Include jQuery -->
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+		<!-- Include Faker.js -->
+		<script src="js/vendor/faker.js" type="text/javascript"></script>
 	</head>
 	
-	<body class="container-fluid">
-		<h2>Hello World</h2>
+	<body class="container-fluid" ng-app="vikingSpa">
+		<div class="row">
+			<section id="top-bar" class="col-sm-12">
+				<div class="col-sm-6"><h2>Viking Store</h2></div>
+				<div id="top-bar-account" class="col-sm-6">
+					<div id="account-image">
+						<img src="http://placehold.it/50x50">
+					</div>
+					<div id="account-links" ng-controller="CartCtrl">
+						<a ui-sref="cart">Your Cart</a>{{ count }}
+						<a href="#">Sign In</a>
+					</div>
+				</div>
+			</section><!-- END Top Bar -->
+		</div><!-- END Row -->
+
+		<!-- Shout Wrapper -->
+		<div class="row">
+			<section id="welcome-shout" class="col-sm-12">
+				<div id="shout-wrapper">
+					<h1>The Viking Store</h1>
+				</div>
+			</section>
+		</div><!-- END Row -->
+		<!-- END Shout Wrapper -->
+
+		<!-- Products -->
+		<div class="row">
+			<ui-view></ui-view>
+		</div><!-- END Row -->
+		<!-- END Products -->
 	</body>
 
 <!-- Include Bootstrap JS -->
@@ -20,5 +54,17 @@
 <!-- Include AngularUI Router -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js
 "></script>
+
+<!-- Include our App -->
+<script src="js/app.js"></script>
+
+<!-- Include our Services -->
+<script src="js/services/productService.js"></script>
+<script src="js/services/cartService.js"></script>
+
+<!-- Include our Controllers -->
+<script src="js/controllers/ProductsCtrl.js"></script>
+<script src="js/controllers/ProductCtrl.js"></script>
+<script src="js/controllers/CartCtrl.js"></script>
 
 </html>

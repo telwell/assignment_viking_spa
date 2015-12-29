@@ -1,0 +1,23 @@
+<section id="cart" class="col-sm-10 col-sm-offset-1">
+	<h2>Your Cart</h2>
+	<a ui-sref="products"> >>Return to Products</a>
+	<table class="table table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>Item</th>
+				<th>Quantity</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="(id, quantity) in cart">
+				<td>{{ getProductById(id).name }}</td>
+				<td>
+					<span ng-if="showUpdateQuantity(id) == false">{{ quantity }}</span>
+					<input type="number" name="itemQuantity" class="form-control" value="{{ quantity }}" ng-if="showUpdateQuantity(id) == true" ng-model="cart[id]">
+					<a href="" class="btn btn-primary" ng-click="hideUpdateQuantity(id)" ng-if="showUpdateQuantity(id) == true">Update Cart</a>
+					<a href="" ng-click="updateQuantityIds.push(id);" ng-if="showUpdateQuantity(id) == false"> >>Update Quantity</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
